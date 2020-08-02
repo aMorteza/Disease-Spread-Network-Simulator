@@ -28,6 +28,7 @@ def nodes_chunk_by_status(nodes):
 def plot_graph(G):
     # position is stored as node attribute data for random_geometric_graph
     pos = nx.spring_layout(G)
+    plt.figure(figsize=[40, 30], dpi=80)
     nx.draw_networkx(G, pos, node_size=200, node_color='green')
     plt.axis('off')
     plt.savefig("plots/graph_before_run.png")
@@ -36,7 +37,7 @@ def plot_graph(G):
 def plot_graph_with_status_color(G, nodes):
     # position is stored as node attribute data for random_geometric_graph
     pos = nx.spring_layout(G)
-
+    plt.figure(figsize=[40, 30], dpi=80)
     greens, yellows, reds, grays = nodes_chunk_by_status(nodes)
     # nodes
     nx.draw_networkx_nodes(G, pos,
