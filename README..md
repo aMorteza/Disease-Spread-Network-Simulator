@@ -1,5 +1,5 @@
-###Designing a system for simulating the spread of infectious diseases based on network science.
- Node status: susceptible (0), exposed (1), infectious (2), and recovered (3) individuals.
+Designing a system for simulating the spread of infectious diseases based on network science.
+* Node status: susceptible (0), exposed (1), infectious (2), and recovered (3) individuals.
 * Install these packages using python3 
 ```
 pip3 install numpy

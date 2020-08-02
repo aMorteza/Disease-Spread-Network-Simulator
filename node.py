@@ -54,7 +54,7 @@ class Node(threading.Thread):
 
     def recover_or_die(self):
         self.infection_end_time = time.time()
-        if self.p > self.q:
+        if self.p >= self.q:
             self.status = 3
             self.debug_print("Node:" + str(self.id) + " is recovered")
         else:
