@@ -28,8 +28,8 @@ def nodes_chunk_by_status(nodes):
 def plot_graph(G):
     # position is stored as node attribute data for random_geometric_graph
     pos = nx.spring_layout(G)
-    plt.figure(figsize=[40, 30], dpi=80)
-    nx.draw_networkx(G, pos, node_size=200, node_color='green')
+    plt.figure(figsize=[30, 30], dpi=80)
+    nx.draw_networkx(G, pos, node_size=800, node_color='green')
     plt.axis('off')
     plt.savefig("plots/graph_before_run.png")
 
@@ -37,30 +37,30 @@ def plot_graph(G):
 def plot_graph_with_status_color(G, nodes):
     # position is stored as node attribute data for random_geometric_graph
     pos = nx.spring_layout(G)
-    plt.figure(figsize=[40, 30], dpi=80)
+    plt.figure(figsize=[30, 30], dpi=80)
     greens, yellows, reds, grays = nodes_chunk_by_status(nodes)
     # nodes
     nx.draw_networkx_nodes(G, pos,
                            nodelist=[node.id for node in greens],
                            node_color='green',
-                           node_size=100,
+                           node_size=800,
                            alpha=0.8)
     nx.draw_networkx_nodes(G, pos,
                            nodelist=[node.id for node in yellows],
                            node_color='yellow',
-                           node_size=100,
+                           node_size=800,
                            alpha=0.8)
 
     nx.draw_networkx_nodes(G, pos,
                            nodelist=[node.id for node in reds],
                            node_color='red',
-                           node_size=100,
+                           node_size=800,
                            alpha=0.8)
 
     nx.draw_networkx_nodes(G, pos,
                            nodelist=[node.id for node in grays],
                            node_color='grey',
-                           node_size=100,
+                           node_size=800,
                            alpha=0.8)
     # edges
     nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)

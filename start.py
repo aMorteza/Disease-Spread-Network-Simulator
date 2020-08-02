@@ -33,6 +33,8 @@ for node_edge in nodes_edges:
         if edge == 1 and row != col and edge_chance > 50:
             neighbor = nodes[col]
             graph.add_edge(node.id, neighbor.id)
+            node.neighbors.append(neighbor)
+            neighbor.neighbors.append(node)
         col += 1
     row += 1
 
@@ -43,13 +45,15 @@ utils.plot_graph(graph)
 infectious_node = utils.first(random.sample(nodes, 1))
 if infectious_node is not None:
     infectious_node.status = 1
-    infectious_node.infection_start_time = 0
+    infectious_node.infection_start_time = time.time()
     infectious_node.p = np.random.random()
     infectious_node.q = 1 - infectious_node.p
     infectious_node.r0 = np.random.random()
-    print("Victom Node: " + str(infectious_node.id) + " infected.")
+    print("Victom Node: " + str(infectious_node.id) + " infected. \nNeighbors:", end=" ")
+    for neighbor in infectious_node.neighbors:
+        print(str(neighbor.id), end=",\t")
 
-print("Starting network..")
+print("\nStarting network..")
 """calling run method foreach node thread"""
 for node in nodes:
     node.start()

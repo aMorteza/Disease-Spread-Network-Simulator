@@ -71,7 +71,6 @@ class Node(threading.Thread):
 
     def run(self):
         """The main loop of the thread that deals with connections from other nodes on the network."""
-        start_time = time.time()
         self.debug_print("Node:" + str(self.id) + " started.")
         while not self.terminate_flag.is_set():  # Check whether the thread needs to be closed
             try:
@@ -79,8 +78,7 @@ class Node(threading.Thread):
                     victom = utils.first(self.get_sample_of_neighbors(status=0, size=1))
                     if victom is not None:
                         self.infect(victom)
-                    current_time = time.time() - start_time
-                    infection_time = current_time - self.infection_start_time
+                    infection_time = time.time() - self.infection_start_time
                     if infection_time >= self.t:
                         self.recover_or_die()
 
