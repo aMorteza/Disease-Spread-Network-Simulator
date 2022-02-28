@@ -6,7 +6,6 @@ pip3 install numpy
 pip3 install python-dotenv
 pip3 install networkx
 pip3 install matplotlib
-
 ``` 
 * To start simulating run start.py
 * Config simulating parameters in .env file.
@@ -18,3 +17,9 @@ pip3 install matplotlib
 * After diseases infection
 
 ![graph_after_run](plots/example/100-nodes/graph_after_run.png)
+
+
+
+
+* Any Question? 
+Feel free to feedback amh.morteza@gmail.com
