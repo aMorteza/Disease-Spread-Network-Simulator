@@ -10,11 +10,11 @@ pip3 install matplotlib
 * To start simulating run start.py
 * Config simulating parameters in .env file.
 
-* Before diseases infection
+* Before diseases infection (All nodes are susceptible)
 
 ![graph_before_run](plots/example/100-nodes/graph_before_run.png)
 
-* After diseases infection
+* After diseases infection (All nodes are exposed or recovered) 
 
 ![graph_after_run](plots/example/100-nodes/graph_after_run.png)
 
